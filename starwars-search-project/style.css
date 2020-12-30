@@ -222,7 +222,7 @@ input:focus {
 }
 @media only screen and (max-width: 600px) {
   .data {
-    width: 450px;
+    width: 400px;
   }
   .navbar {
     bottom: 0;
