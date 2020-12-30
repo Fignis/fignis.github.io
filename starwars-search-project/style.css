@@ -1,0 +1,259 @@
+:root {
+  --pcolor: yellow;
+  --scolor: #73dddd46;
+  --scolor2: rgb(194, 194, 194);
+  --bg-prim: #23232e;
+  --bg-sec: #141418;
+  --text: #b6b6b6;
+  --text2: #ececec;
+  --trans-speed: 600ms;
+  font-family: "Raleway";
+}
+
+body {
+  font-family: "Raleway";
+  height: 100vh;
+  color: black;
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--scolor);
+}
+main {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%),
+    no-repeat;
+  margin-left: 5rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  background: var(--text2);
+  transition: width 200ms ease;
+}
+.nav-item {
+  width: 100%;
+}
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  height: 100%;
+}
+.n-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--bg-prim);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--trans-speed);
+}
+.n-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--scolor2);
+}
+.link-text {
+  display: none;
+  font-weight: 300;
+  margin-left: 0.8rem;
+}
+.n-link svg {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.container {
+  display: flex;
+  justify-items: space-evenly;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.rescontainer {
+  display: flex;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  justify-items: space-evenly;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.title {
+  line-height: 5rem;
+  text-transform: capitalize;
+  text-align: left;
+  color: var(--text2);
+  display: block;
+  font-weight: 700;
+}
+.input {
+  display: grid;
+  place-items: center;
+}
+input {
+  display: flex;
+  border-radius: 11px;
+  margin-bottom: 10px;
+  padding: 12px 1rem 12px 1rem;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--bg-prim);
+  transition: all 1s;
+}
+input:focus {
+  box-shadow: 0 30px 45px -15px rgba(16, 255, 243, 0.623);
+  transform: scale(1.07);
+  outline: none;
+}
+@keyframes big {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+.data {
+  color: var(--text2);
+  font-weight: 700;
+  background: var(--bg-sec);
+  padding: 0 0.5rem 0 0.5rem;
+  width: 500px;
+  overflow-wrap: break-word;
+}
+/* display: block;
+  align-items: center;
+  flex-flow: column wrap;
+  text-align: left;
+  justify-content: left;
+  height: auto;
+  overflow-wrap: break-word;
+}
+.data p {
+  width: 600px;
+  word-wrap: normal;
+  display: block;
+}
+*/
+
+.n-links {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+}
+.logo {
+  animation: floating 3s infinite ease-in-out;
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.novisible {
+  animation: fade 1.5s all;
+}
+#redirbutt {
+  display: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+#redirbutt:hover {
+  transform: scale(1.03);
+}
+.visible {
+  display: block;
+  opacity: 1;
+}
+@keyframes fade {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 0%;
+    display: none;
+  }
+}
+.icon {
+  cursor: pointer;
+  display: block;
+  flex-grow: 1;
+  width: 2px;
+  color: #23232e;
+  position: absolute;
+  margin-top: 1rem;
+  z-index: 0;
+  margin-left: 16rem;
+}
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+    background-color: #23232e;
+  }
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .n-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+  .title {
+    line-height: 3rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+  .navbar:hover {
+    width: 13rem;
+  }
+  .navbar:hover .link-text {
+    display: inline;
+    transition: opacity var(--trans-speed);
+  }
+}
